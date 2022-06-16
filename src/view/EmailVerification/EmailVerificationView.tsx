@@ -18,7 +18,6 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 
 export default function EmailVerificationView() {
   const params: IProp = useParams();
-  console.log(params);
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -40,11 +39,10 @@ export default function EmailVerificationView() {
   useEffect(() => {
     verification({ uid: params.uid, token: params.token })
       .then((res) => {
-        console.log(res, "aman");
+        navigate("/login");
       })
       .catch((error) => {
-        console.log(error);
-        // setMessage(JSON.stringify(error));
+        setMessage(JSON.stringify(error));
       });
   }, []);
 
