@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import LayoutView from "../../Layout";
 import { questions } from "./questionSlice";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import QuestionForm from "./QuestionForm";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   width: "100%",
@@ -13,7 +14,7 @@ const style = {
 export default function QuestionView() {
   const dispatch = useAppDispatch();
   const questionList = useAppSelector((state) => state.questionReducer);
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(questions());
   }, []);
@@ -29,6 +30,15 @@ export default function QuestionView() {
   return (
     <LayoutView>
       <Box sx={{ marginTop: "100px" }}>
+        <Button
+          sx={{ display: "block", marginInline: "auto" }}
+          variant="contained"
+          onClick={() => {
+            navigate("/create");
+          }}
+        >
+          Create Question
+        </Button>
         {questionList.question.map((currentQuestion) => {
           return (
             <QuestionForm question={currentQuestion} key={currentQuestion.id} />

@@ -32,7 +32,6 @@ export default function LoginView() {
   let navigate = useNavigate();
 
   const onSubmit: SubmitHandler<ILoginInput> = async (data) => {
-    const res = await loginUserApi(data);
     dispatch(loginUser(data));
   };
 

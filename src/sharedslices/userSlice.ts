@@ -11,7 +11,7 @@ const initialState: ILoginState = {
 
 export const loginSocialUser = createAsyncThunk(
   "user/loginSocialUser",
-  async (data: any): Promise<IUserState> => {
+  async (data: any, { rejectWithValue }): Promise<IUserState> => {
     try {
       // const data = data
 
@@ -20,7 +20,7 @@ export const loginSocialUser = createAsyncThunk(
       localStorage.setItem("codequizrefresh", response["refresh"]);
       return response;
     } catch (error) {
-      return Promise.reject(error);
+      throw rejectWithValue(error);
     }
 
     // return data;
@@ -30,7 +30,7 @@ export const loginSocialUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
   "user/loginUser",
 
-  async (data: any): Promise<IUserState> => {
+  async (data: any, { rejectWithValue }): Promise<IUserState> => {
     try {
       // const data = data
 
@@ -39,7 +39,7 @@ export const loginUser = createAsyncThunk(
       localStorage.setItem("codequizrefresh", response["refresh"]);
       return response;
     } catch (error) {
-      return Promise.reject(error);
+      throw rejectWithValue(error);
     }
 
     // return data;

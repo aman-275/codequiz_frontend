@@ -18,19 +18,9 @@ export default function SnackBar({
   message,
 }: SnackbarProps &
   AlertProps & { setOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
-  const handleClose = (
-    event: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
   return (
-    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-      <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
+    <Snackbar open={open} autoHideDuration={6000}>
+      <Alert severity={severity} sx={{ width: "100%" }}>
         {message}
       </Alert>
     </Snackbar>

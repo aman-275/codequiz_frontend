@@ -13,13 +13,13 @@ const initialState: IQuestionState = {
 
 export const questions = createAsyncThunk(
   "question/questions",
-  async (): Promise<IQuestion[]> => {
+  async (_, { rejectWithValue }): Promise<IQuestion[]> => {
     try {
       const response = await questionsApi();
 
       return response as IQuestion[];
     } catch (error) {
-      return Promise.reject(error);
+      throw rejectWithValue(error);
     }
   }
 );
