@@ -99,15 +99,10 @@ export default function MainView() {
           >
             CodeQuiz is a exceedingly intuitive interface which let you focus on
             creating quiz. It allow you to set questions with options as a
-            answer and let users to interact with it. CodeQuiz is a exceedingly
-            intuitive interface which let you focus on creating quiz. It allow
-            you to set questions with options as a answer and let users to
-            interact with it. CodeQuiz is a exceedingly intuitive interface
-            which let you focus on creating quiz. It allow you to set questions
-            with options as a answer and let users to interact with it. CodeQuiz
-            is a exceedingly intuitive interface which let you focus on creating
-            quiz. It allow you to set questions with options as a answer and let
-            users to interact with it.
+            answer and let users to interact with it. It helps users to learn
+            new new technology in a creative way.A quiz is a form of game or
+            mind sport in which players attempt to answer questions correctly
+            about a certain or variety of subjects
           </Typography>
         </Grid>
       </Grid>

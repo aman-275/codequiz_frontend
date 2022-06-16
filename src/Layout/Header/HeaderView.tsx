@@ -15,6 +15,8 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { Link } from "react-router-dom";
+import LoginIcon from "@mui/icons-material/Login";
+import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -63,9 +65,9 @@ export default function HeaderView() {
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? (
-                  <InboxIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
+                  <LoginIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
                 ) : (
-                  <MailIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
+                  <AppRegistrationIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
                 )}
               </ListItemIcon>
               <Link

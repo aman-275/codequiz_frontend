@@ -69,40 +69,7 @@ export default function HeroView() {
               gap: "10px",
               marginTop: "10px",
             }}
-          >
-            <Button
-              sx={{
-                borderRadius: 15,
-                borderColor: "white",
-                color: "hsl(353, 100%, 62%)",
-                backgroundColor: "white",
-                ":hover": {
-                  bgcolor: "hsl(355, 100%, 74%)",
-                  color: "white", // theme.palette.primary.main
-                  borderColor: "white",
-                },
-              }}
-              variant="outlined"
-            >
-              Start
-            </Button>
-            <Button
-              sx={{
-                borderRadius: 15,
-                borderColor: "white",
-                color: "white",
-                backgroundColor: "transparent",
-                ":hover": {
-                  bgcolor: "white",
-                  color: "hsl(355, 100%, 74%)",
-                  borderColor: "white",
-                },
-              }}
-              variant="outlined"
-            >
-              Learn More
-            </Button>
-          </Box>
+          ></Box>
         </Box>
       </Box>
     </>
