@@ -14,7 +14,7 @@ export const loginSocialUser = createAsyncThunk(
   async (data: any, { rejectWithValue }): Promise<IUserState> => {
     try {
       // const data = data
-
+      console.log(data);
       const response: IUserState = await loginUserGoogleApi(data);
       localStorage.setItem("codequiztoken", response["access"]);
       localStorage.setItem("codequizrefresh", response["refresh"]);

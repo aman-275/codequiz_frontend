@@ -57,18 +57,41 @@ export default function HeaderView() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {[
-          { name: "login", href: "/login" },
-          { name: "Sign Up", href: "/registration" },
-        ].map(({ name, href }, index) => (
-          <ListItem key={name} disablePadding>
+        {!localStorage.getItem("codequiztoken") ? (
+          [
+            { name: "login", href: "/login" },
+            { name: "Sign Up", href: "/registration" },
+          ].map(({ name, href }, index) => (
+            <ListItem key={name} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {index % 2 === 0 ? (
+                    <LoginIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
+                  ) : (
+                    <AppRegistrationIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
+                  )}
+                </ListItemIcon>
+                <Link
+                  style={{
+                    color: "white",
+                    padding: "10px",
+                    textDecoration: "None",
+                  }}
+                  to={href}
+                  onClick={() => {
+                    localStorage.removeItem("codequiztoken");
+                  }}
+                >
+                  <ListItemText primary={name} />
+                </Link>
+              </ListItemButton>
+            </ListItem>
+          ))
+        ) : (
+          <ListItem key="Logout" disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? (
-                  <LoginIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
-                ) : (
-                  <AppRegistrationIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
-                )}
+                <LoginIcon sx={{ color: "hsl(0, 0%, 100%)" }} />
               </ListItemIcon>
               <Link
                 style={{
@@ -76,13 +99,13 @@ export default function HeaderView() {
                   padding: "10px",
                   textDecoration: "None",
                 }}
-                to={href}
+                to="/registration"
               >
-                <ListItemText primary={name} />
+                <ListItemText primary="Logout" />
               </Link>
             </ListItemButton>
           </ListItem>
-        ))}
+        )}
       </List>
     </Box>
   );
