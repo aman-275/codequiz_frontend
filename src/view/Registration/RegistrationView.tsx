@@ -28,7 +28,7 @@ import { useNavigate } from "react-router-dom";
 gapi.load("client:auth2", () => {
   gapi.client.init({
     clientId:
-      "319472057262-vdfeg3ikhkvq04sdh2tehr6tlm1jgc6i.apps.googleusercontent.com",
+      "726510210867-kocdcsfiev6sa56uvcspiksgo9p6ned7.apps.googleusercontent.com",
     scope: "email",
   });
 });
